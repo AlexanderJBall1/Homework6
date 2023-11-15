@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/elevator.js@1.0.1/elevator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <title>Homework 6</title>
+</head>
+<body>
+    <div>
+        <script>
+
+        </script>
+    </div>
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
+    <script>
+    const xArray = ["Nikola Jokic","Joel Embiid","Giannis Antetokunmpo","Devin Booker","Luka Doncic"];
+const yArray = [875, 706, 44, 24, 15];
+
+const data = [{
+  x: xArray,
+  y: yArray,
+  type: "bar",
+  orientation:"v",
+  marker: {color:"rgba(255,0,255,0.4)"}
+}];
+
+const layout = {title:"World Wide Wine Production"};
+
+Plotly.newPlot("myPlot", data, layout);   
+    </script>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = ["Dallas", "New York", "Washington", "Philly"];
+const yValues = [6, 2, 4, 8];
+const barColors = ["Blue", "Blue","Red","Green"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "NFC East Wins 2023"
+    }
+  }
+});
+</script>
+<script>
+    anime({
+  targets: 'div',
+  translateX: 250,
+  rotate: '1turn',
+  backgroundColor: '#FFF',
+  duration: 800
+});
+</script>
+      
+    <button class="elevator-button">Back to Top</button>
+
+    <script>
+    // Elevator script included on the page, already.
+    
+    window.onload = function() {
+      var elevator = new Elevator({
+        element: document.querySelector('.elevator-button'),
+        duration: 1000 // milliseconds
+      });
+    }
+    </script>
+
+
+
+</body>
+</html>
